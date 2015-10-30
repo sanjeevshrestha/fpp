@@ -2,6 +2,11 @@ package fpp;
 
 public class Sqrt {
 
+	/**
+	 * Page 1 Q1
+	 * @param n
+	 * @return
+	 */
 	public int nextPerfectSquare(int n) {
 		if (n > 0) {
 
@@ -25,6 +30,12 @@ public class Sqrt {
 		}
 	}
 
+	
+	/**
+	 * Tesai ko practice :)
+	 * @param n
+	 * @return
+	 */
 	public double sqrt(int n) {
 		if (n <= 0)
 			return 0;

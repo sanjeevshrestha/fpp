@@ -2,6 +2,14 @@ package fpp;
 
 public class fpparray {
 
+	/**
+	 * Page 17 Q2
+	 * An array is called vanilla if all its elements are made up of the same digit. For example {1, 1, 11, 1111, 1111111} is a vanilla array
+because all its elements use only the digit 1. However, the array {11, 101, 1111, 11111} is not a vanilla array because its elements use the
+digits 0 and 1. Write a method called isVanilla that returns 1 if its argument is a vanilla array. Otherwise it returns 0.
+	 * @param a
+	 * @return
+	 */
 	public int isVanilla(int[] a) {
 		for (int i = 0; i < a.length; i++) {
 
@@ -43,7 +51,10 @@ public class fpparray {
 
 	}
 /**
- * 
+ * Last page q 3
+ * An array is defined to be maxmin equal if it contains at least two different elements and the number of times the maximum value
+occur is the same as the number of times the minimum value occur. So {11, 4, 9, 11, 8, 5 , 4, 10} is maxmin equal, because the max
+value 11 and min value 4 both appear two times in the array.
  * @param ar
  * @return
  */
