@@ -158,37 +158,57 @@ public class fpparray {
 		}
 		return evenCount == 2 && adj == 1 ? 1 : 0;
 	}
-	
-	//by yubraj (Notch4)
-	public static int isTwinoidNotch(int[] a){
+
+	// by yubraj (Notch4)
+	public static int isTwinoidNotch(int[] a) {
 		int countEven = 0;
-		int result = 0; 
-		if(a.length > 1){
-			for(int i =0; i<a.length; i++){
-				if(a[i]%2 == 0){
+		int result = 0;
+		if (a.length > 1) {
+			for (int i = 0; i < a.length; i++) {
+				if (a[i] % 2 == 0) {
 					countEven++;
 				}
 			}
-		}else return 0;
-		
-		
-		//System.out.println("Total Even : " + countEven);
-		
-		if(countEven == 2){
+		} else
+			return 0;
+
+		// System.out.println("Total Even : " + countEven);
+
+		if (countEven == 2) {
 			System.out.println("it has two");
-			for(int j = 0; j<a.length-1; j++){
-				if(a[j] % 2 == 0){
-					if(a[j+1] %2 == 0){ 
+			for (int j = 0; j < a.length - 1; j++) {
+				if (a[j] % 2 == 0) {
+					if (a[j + 1] % 2 == 0) {
 						result = 1;
 						break;
-					}
-					else result = 0;
+					} else
+						result = 0;
 				}
 			}
-		}else result = 0;
-		
-		if(result == 1) return 1; 
-		else return 0;
+		} else
+			result = 0;
+
+		if (result == 1)
+			return 1;
+		else
+			return 0;
+	}
+
+	/**
+	 * Page 92 Q2 Write a function named lastEven that returns the index of the
+	 * last even value in its array argument. For example, lastEven will return
+	 * 3 if the array is {3, 2, 5, 6, 7}, because that is the index of 6 which
+	 * is the last even value in the array
+	 */
+
+	public int lastEven(int[] arr) {
+		int lE = -1;
+		for (int x = 0; x < arr.length; x++) {
+			if (arr[x] % 2 == 0) {
+				lE = x;
+			}
+		}
+		return lE;
 	}
 
 }

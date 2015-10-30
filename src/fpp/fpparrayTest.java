@@ -35,8 +35,13 @@ public class fpparrayTest {
 		assertEquals(fpa.isTwinoid(new int[] { 3, 3, 2, 6, 6, 7 }), 0);
 		assertEquals(fpa.isTwinoid(new int[] { 3, 3, 2, 7, 6, 7 }), 0);
 		assertEquals(fpa.isTwinoid(new int[] { 3, 3, 2, 6, 6, 7 }), 0);
-		assertEquals(fpa.isTwinoid(new int[] {3, 8, 5, 7, 3 }), 0);
-		assertEquals(fpa.isTwinoid(new int[] {2, 4, 5, 7, 3 }), 1);
+		assertEquals(fpa.isTwinoid(new int[] { 3, 8, 5, 7, 3 }), 0);
+		assertEquals(fpa.isTwinoid(new int[] { 2, 4, 5, 7, 3 }), 1);
+
+		assertEquals(fpa.lastEven(new int[] { 2, 4, 5, 7, 3 }), 1);
+		assertEquals(fpa.lastEven(new int[] { 3, 2, 5, 6, 7 }), 3);
+		assertEquals(fpa.lastEven(new int[] { 1, 9, 3, 2, 5, 1, 7 }), 3);
+		assertEquals(fpa.lastEven(new int[] { 1, 9, 3, 2, 5, 1, 7, 8 }), 7);
 
 	}
 
