@@ -158,5 +158,37 @@ public class fpparray {
 		}
 		return evenCount == 2 && adj == 1 ? 1 : 0;
 	}
+	
+	//by yubraj (Notch4)
+	public static int isTwinoid(int[] a){
+		int countEven = 0;
+		int result = 0; 
+		if(a.length > 1){
+			for(int i =0; i<a.length; i++){
+				if(a[i]%2 == 0){
+					countEven++;
+				}
+			}
+		}else return 0;
+		
+		
+		//System.out.println("Total Even : " + countEven);
+		
+		if(countEven == 2){
+			System.out.println("it has two");
+			for(int j = 0; j<a.length-1; j++){
+				if(a[j] % 2 == 0){
+					if(a[j+1] %2 == 0){ 
+						result = 1;
+						break;
+					}
+					else result = 0;
+				}
+			}
+		}else result = 0;
+		
+		if(result == 1) return 1; 
+		else return 0;
+	}
 
 }
