@@ -224,6 +224,7 @@ public class fpparray {
 	 */
 
 	public int isBean(int[] arr) {
+		if(arr.length<=0) return 0;
 		boolean found = false;
 		for (int x = 0; x < arr.length; x++) {
 			found = false;

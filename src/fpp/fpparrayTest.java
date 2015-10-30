@@ -46,9 +46,8 @@ public class fpparrayTest {
 		assertEquals(fpa.isBean(new int[] { 2, 10, 9, 3 }), 1);
 		assertEquals(fpa.isBean(new int[] { 2, 2, 3, 3, 3 }), 1);
 		assertEquals(fpa.isBean(new int[] { 0, -1, 1 }), 1);
-		assertEquals(fpa.isBean(new int[] {3, 4, 5, 7}), 0);
-		assertEquals(fpa.isBean(new int[] {}), 1);
-
+		assertEquals(fpa.isBean(new int[] { 3, 4, 5, 7 }), 0);
+		assertEquals(fpa.isBean(new int[] {}), 0);
 
 	}
 
