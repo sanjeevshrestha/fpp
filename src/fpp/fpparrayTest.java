@@ -43,6 +43,13 @@ public class fpparrayTest {
 		assertEquals(fpa.lastEven(new int[] { 1, 9, 3, 2, 5, 1, 7 }), 3);
 		assertEquals(fpa.lastEven(new int[] { 1, 9, 3, 2, 5, 1, 7, 8 }), 7);
 
+		assertEquals(fpa.isBean(new int[] { 2, 10, 9, 3 }), 1);
+		assertEquals(fpa.isBean(new int[] { 2, 2, 3, 3, 3 }), 1);
+		assertEquals(fpa.isBean(new int[] { 0, -1, 1 }), 1);
+		assertEquals(fpa.isBean(new int[] {3, 4, 5, 7}), 0);
+		assertEquals(fpa.isBean(new int[] {}), 1);
+
+
 	}
 
 }
