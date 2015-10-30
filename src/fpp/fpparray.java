@@ -160,7 +160,7 @@ public class fpparray {
 	}
 	
 	//by yubraj (Notch4)
-	public static int isTwinoid(int[] a){
+	public static int isTwinoidNotch(int[] a){
 		int countEven = 0;
 		int result = 0; 
 		if(a.length > 1){
