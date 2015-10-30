@@ -3,6 +3,7 @@ package fpp;
 public class numbers {
 
 	/**
+	 * Page 93 Q1
 	 * An integer is defined to be an even subset of another integer n if every
 	 * even factor of m is also a factor of n. For example 18 is an even subset
 	 * of 12 because the even factors of 18 are 2 and 6 and these are both
