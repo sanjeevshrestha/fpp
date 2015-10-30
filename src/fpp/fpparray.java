@@ -3,10 +3,13 @@ package fpp;
 public class fpparray {
 
 	/**
-	 * Page 17 Q2
-	 * An array is called vanilla if all its elements are made up of the same digit. For example {1, 1, 11, 1111, 1111111} is a vanilla array
-because all its elements use only the digit 1. However, the array {11, 101, 1111, 11111} is not a vanilla array because its elements use the
-digits 0 and 1. Write a method called isVanilla that returns 1 if its argument is a vanilla array. Otherwise it returns 0.
+	 * Page 17 Q2 An array is called vanilla if all its elements are made up of
+	 * the same digit. For example {1, 1, 11, 1111, 1111111} is a vanilla array
+	 * because all its elements use only the digit 1. However, the array {11,
+	 * 101, 1111, 11111} is not a vanilla array because its elements use the
+	 * digits 0 and 1. Write a method called isVanilla that returns 1 if its
+	 * argument is a vanilla array. Otherwise it returns 0.
+	 * 
 	 * @param a
 	 * @return
 	 */
@@ -50,17 +53,21 @@ digits 0 and 1. Write a method called isVanilla that returns 1 if its argument i
 		return 1;
 
 	}
-/**
- * Last page q 3
- * An array is defined to be maxmin equal if it contains at least two different elements and the number of times the maximum value
-occur is the same as the number of times the minimum value occur. So {11, 4, 9, 11, 8, 5 , 4, 10} is maxmin equal, because the max
-value 11 and min value 4 both appear two times in the array.
- * @param ar
- * @return
- */
+
+	/**
+	 * Last page q 3 An array is defined to be maxmin equal if it contains at
+	 * least two different elements and the number of times the maximum value
+	 * occur is the same as the number of times the minimum value occur. So {11,
+	 * 4, 9, 11, 8, 5 , 4, 10} is maxmin equal, because the max value 11 and min
+	 * value 4 both appear two times in the array.
+	 * 
+	 * @param ar
+	 * @return
+	 */
 	public int isMaxMinEqual(int[] ar) {
 
-		if(ar.length<=0) return 0;
+		if (ar.length <= 0)
+			return 0;
 		int max = Integer.MIN_VALUE;
 		int min = Integer.MAX_VALUE;
 		int maxcount = 0;
@@ -82,7 +89,74 @@ value 11 and min value 4 both appear two times in the array.
 			}
 		}
 
-		return mincount == maxcount ? max!=min?1:0 : 0;
+		return mincount == maxcount ? max != min ? 1 : 0 : 0;
 
 	}
+
+	/**
+	 * Page 93 Q3 . A balanced array is defined to be an array where for every
+	 * value n in the array, -n also is in the array. For example {-2, 3, 2, -3}
+	 * is a balanced array. So is {-2, 2, 2, 2}. But {-5, 2, -2} is not because
+	 * 5 is not in the array.
+	 * 
+	 * @param arr
+	 * @return
+	 */
+
+	public int isBalanced(int[] arr) {
+		if (arr.length <= 0)
+			return 0;
+		int isBalanced = 1;
+		boolean found = false;
+		for (int x = 0; x < arr.length; x++) {
+			found = false;
+
+			for (int y = 0; y < arr.length; y++) {
+				if (arr[x] == (arr[y] * -1)) {
+					found = true;
+					break;
+				}
+
+			}
+			if (!found) {
+				isBalanced = 0;
+			}
+
+		}
+
+		return isBalanced;
+	}
+
+	/**
+	 * . A twinoid is defined to be an array that has exactly two even values
+	 * that are adjacent to one another. For example {3, 3, 2, 6, 7} is a
+	 * twinoid array because it has exactly two even values (2 and 6) and they
+	 * are adjacent to one another. The following arrays are not twinoid arrays.
+	 */
+	public int isTwinoid(int[] arr) {
+		if (arr.length <= 0)
+			return 0;
+		int evenCount = 0;
+		int fA = -1;
+		int adj = 0;
+
+		for (int x = 0; x < arr.length; x++) {
+			if (arr[x] % 2 == 0) {
+				if (fA == -1) {
+					fA = x;
+				} else {
+					if (fA + 1 == x) {
+						adj = 1;
+					} else {
+						adj = 0;
+						fA = x;
+					}
+				}
+
+				evenCount++;
+			}
+		}
+		return evenCount == 2 && adj == 1 ? 1 : 0;
+	}
+
 }
