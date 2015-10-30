@@ -37,4 +37,18 @@ public class numbers {
 		}
 		return 1;
 	}
+
+	/**
+	 * GCD
+	 */
+
+	public int gcd(int a, int b) {
+		while (a > 0) {
+			int tmp = b % a;
+			b = a;
+			a = tmp;
+		}
+		return b;
+
+	}
 }
