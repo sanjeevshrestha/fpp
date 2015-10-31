@@ -308,6 +308,26 @@ public class fpparray {
 	}
 
 	/**
+	 * Write a function named eval that returns the value of the polynomial a n
+	 * x n + a n-1 x n-1 + ... + a 1 x 1 + a 0 .
+	 */
+
+	public double eval(double x, int[] a) {
+
+		double sum = 0;
+		for (int y = a.length - 1; y >= 0; y--) {
+			double expVal = 1;
+			for (int z = 0; z < y; z++) {
+				expVal = expVal * x;
+			}
+			sum += a[y] * expVal;
+		}
+
+		return sum;
+
+	}
+
+	/**
 	 * Page 89 Q2 A Meera array is an array that contains the value 0 if and
 	 * only if it contains a prime number. The array {7, 6, 0, 10, 1} is a Meera
 	 * array because it contains a prime number (7) and also contains a 0. The
