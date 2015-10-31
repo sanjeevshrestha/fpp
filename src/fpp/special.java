@@ -57,7 +57,7 @@ public class special {
 	 * elements where a[0] == x, a[1] == y and x! + y! = 10!.
 	 */
 
-	public int factorial(int n) {
+	public long factorial(int n) {
 		if (n <= 0) {
 			return 1;
 		} else {
