@@ -49,7 +49,6 @@ public class fpparrayTest {
 		assertEquals(fpa.isBean(new int[] { 3, 4, 5, 7 }), 0);
 		assertEquals(fpa.isBean(new int[] {}), 0);
 		
-		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1}),1);
 		
 		assertEquals(fpa.isSystematicallyIncreasing(new int[]{1}),1);
 		assertEquals(fpa.isSystematicallyIncreasing(new int[]{1,1,2}),1);
@@ -61,7 +60,12 @@ public class fpparrayTest {
 		assertEquals(fpa.eval(1.0,new int[]{0,1,2,3,4}),10.0,0.01);
 		assertEquals(fpa.eval(3.0,new int[]{3,2,1}),18.0,0.01);
 		assertEquals(fpa.eval(2.0,new int[]{3,-2,-1}),-5.0,0.01);
-
+		
+		assertEquals(fpa.is121Array(new int[]{1, 2, 1}),1);
+		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1}),1);
+		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1}),1);			
+		assertEquals(fpa.is121Array(new int[]{1,3,1,2,2,1,1,1}),0);	
+		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1,2,2,2,1,1,1,2,2,1,1,1}),0);		
 
 
 		

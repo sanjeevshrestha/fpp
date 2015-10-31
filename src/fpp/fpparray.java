@@ -252,25 +252,20 @@ public class fpparray {
 	 */
 
 	public int is121Array(int[] arr) {
-		if (arr.length <= 0)
-			return 0;
+		int n = arr.length;
+		int found2 = 0;
 
-		int oneCount = 0;
-		boolean has2 = false;
-
-		for (int x = 0; x < arr.length / 2; x++) {
-			int x1 = arr[x];
-			int x2 = arr[arr.length - 1 - x];
-			if (arr[x] != arr[arr.length - x - 1]) {
+		for (int x = 0; x <= n / 2; x++) {
+			if ((arr[x] != 1 && arr[x] != 2) || (x == 0 && arr[x] != 1) || (x == n / 2 && arr[x] != 2)
+					|| (arr[x] != arr[n - x - 1]) || (arr[x] == 1 && found2 == 1)) {
 				return 0;
-			} else {
-				if (arr[x] == 2) {
-					has2 = true;
-				}
+			}
+			if (arr[x] == 2) {
+				found2 = 1;
 			}
 		}
 
-		return 0;
+		return 1;
 	}
 
 	/**
