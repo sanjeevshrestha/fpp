@@ -244,6 +244,70 @@ public class fpparray {
 	}
 
 	/**
+	 * Page 94 Q 3 Define an array to be a 121 array if all its elements are
+	 * either 1 or 2 and it begins with one or more 1s followed by a one or more
+	 * 2s and then ends with the same number of 1s that it begins with. Write a
+	 * method named is121Array that returns 1 if its array argument is a 121
+	 * array, otherwise, it returns 0.
+	 */
+
+	public int is121Array(int[] arr) {
+		if (arr.length <= 0)
+			return 0;
+
+		int oneCount = 0;
+		boolean has2 = false;
+
+		for (int x = 0; x < arr.length / 2; x++) {
+			int x1 = arr[x];
+			int x2 = arr[arr.length - 1 - x];
+			if (arr[x] != arr[arr.length - x - 1]) {
+				return 0;
+			} else {
+				if (arr[x] == 2) {
+					has2 = true;
+				}
+			}
+		}
+
+		return 0;
+	}
+
+	/**
+	 * Page 36 Q1 An array is called systematically increasing if it consists of
+	 * increasing sequences of the numbers from 1 to n. The first six (there are
+	 * over 65,000 of them) systematically increasing arrays are: {1} {1, 1, 2}
+	 * {1, 1, 2, 1, 2, 3} {1, 1, 2, 1, 2, 3, 1, 2, 3, 4} {1, 1, 2, 1, 2, 3, 1,
+	 * 2, 3, 4, 1, 2, 3, 4, 5} {1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1,
+	 * 2, 3, 4, 5, 6} Write a function named isSystematicallyIncreasing which
+	 * returns 1 if its array argument is systematically increasing. Otherwise
+	 * it returns 0
+	 */
+
+	public int isSystematicallyIncreasing(int[] arr) {
+		if (arr[0] != 1)
+			return 0;
+		int count = 1;
+		int pNum = 0;
+		for (int x = 0; x < arr.length; x++) {
+
+			int val = arr[x];
+			if (arr[x] != pNum + 1) {
+				return 0;
+
+			} else {
+				pNum++;
+				if (pNum >= count) {
+					pNum = 0;
+					count++;
+				}
+			}
+
+		}
+		return 1;
+	}
+
+	/**
 	 * Page 89 Q2 A Meera array is an array that contains the value 0 if and
 	 * only if it contains a prime number. The array {7, 6, 0, 10, 1} is a Meera
 	 * array because it contains a prime number (7) and also contains a 0. The
@@ -257,12 +321,22 @@ public class fpparray {
 	 * named isMeera that returns 1 if its array argument is a Meera array and
 	 * returns 0 otherwise.
 	 */
-	
-	public int isMeera(int [] n)
-	{
-		int hasPrime=0;
-		int hasZero=0;
-		
+
+	public int isMeera(int[] arr) {
+		int hasPrime = 0;
+		int hasZero = 0;
+
+		primes prm = new primes();
+
+		for (int x = 0; x < arr.length; x++) {
+			if (arr[x] == 0) {
+				hasZero = 1;
+			}
+			if (prm.isPrime(arr[x]) == 1) {
+				hasPrime = 1;
+			}
+		}
+
 		return 1;
 	}
 

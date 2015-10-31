@@ -18,9 +18,9 @@ public class numbersTest {
 		assertEquals(num.isRiley(2426), 1);
 		assertEquals(num.isRiley(5483), 0);
 		assertEquals(num.isRiley(6484), 1);
-		
-		assertEquals(num.gcd(10, 15),5);
-		assertEquals(num.gcd(10, 12),2);
+
+		assertEquals(num.gcd(10, 15), 5);
+		assertEquals(num.gcd(10, 12), 2);
 	}
 
 }
