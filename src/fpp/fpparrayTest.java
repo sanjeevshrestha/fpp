@@ -66,6 +66,9 @@ public class fpparrayTest {
 		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1}),1);			
 		assertEquals(fpa.is121Array(new int[]{1,3,1,2,2,1,1,1}),0);	
 		assertEquals(fpa.is121Array(new int[]{1,1,1,2,2,1,1,1,2,2,2,1,1,1,2,2,1,1,1}),0);		
+		
+		
+		assertEquals(fpa.secondLargest(new int[]{3,4,5,6,9,11,2,1,23,12}),12);
 
 
 		

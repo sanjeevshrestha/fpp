@@ -355,4 +355,27 @@ public class fpparray {
 		return 1;
 	}
 
+	/**
+	 * 
+	 * Second Largest element in array
+	 * 
+	 * @param arr
+	 * @return
+	 */
+
+	public int secondLargest(int[] arr) {
+		int secondLargest = Integer.MIN_VALUE;
+		int largest = Integer.MIN_VALUE;
+
+		for (int x = 0; x < arr.length; x++) {
+			if (arr[x] > largest) {
+				secondLargest = largest;
+				largest = arr[x];
+			} else if (arr[x] > secondLargest) {
+				secondLargest = arr[x];
+			}
+		}
+		return secondLargest;
+	}
+
 }
